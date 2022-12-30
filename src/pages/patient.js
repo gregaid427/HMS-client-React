@@ -14,7 +14,7 @@ import {  useNavigate } from "react-router-dom";
 
 function Store() {
   const dispatch = useDispatch();
-  const notify = () => toast("Here is your toast.");
+  // const notify = () => toast("Here is your toast.");
   const [startDate, setStartDate] = useState(new Date());
   const [birthdate, setbirthdate] = useState("");
   const [fname, setfname] = useState("");
