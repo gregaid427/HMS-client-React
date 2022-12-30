@@ -8,7 +8,7 @@ import {
 } from "../redux/slices/UsersSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import KoinoDynamicTable from "./table";
+// import KoinoDynamicTable from "./table";
 
 
 
