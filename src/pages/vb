@@ -1,0 +1,176 @@
+// import React, { useEffect, useState } from "react";
+// import Navbar from "../features/Navbar";
+
+// import { useSelector, useDispatch } from "react-redux";
+
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
+// import Heading from "../features/heading";
+// import ButtonFull from "../features/button-full";
+// import LabelInput from "../features/labelInput";
+// import SubHeading from "../features/subHeading";
+// import { searchpbyidAction, searchpbyNameAction } from "../redux/slices/patientSlice";
+
+// function Store() {
+//   const patientinfo = useSelector((state) => state?.patients);
+//   // const { patient_id, first_name, sex ,other_name, last_name} = patientinfo;
+
+//   const [id, setid] = useState("");
+//   const [idd, setidd] = useState("");
+//   const [first, setfirst] = useState("");
+//   const [other, setother] = useState("");
+//   const [Last, setLast] = useState("");
+//   const [sexx, setsexx] = useState("");
+//   const [actions, setactions] = useState("");
+//   const [select, setselect] = useState(true);
+
+//   useEffect(() => {
+//     if (patientinfo?.loaded === true && patientinfo?.searchpbyid.success === 0 && select === true) {
+//       setidd("");
+//       setfirst("");
+//       setother("");
+//       setLast("");
+//       setsexx("");
+//       setactions(false);
+//       toast.error("Record Not Found")
+//     }
+//     else if (patientinfo?.loaded === true && select === true) {
+//       setidd(patientinfo?.searchpbyid.data.patient_id);
+//       setfirst(patientinfo.searchpbyid.data.first_name);
+//       setother(patientinfo.searchpbyid.data.other_name);
+//       setLast(patientinfo.searchpbyid.data.last_name);
+//       setsexx(patientinfo.searchpbyid.data.sex);
+//       setactions(true);
+//       toast.error("id trig")
+//     }
+//     else if (patientinfo?.loaded2 === true && patientinfo?.searchpbyname.success === 0 && select === false) {
+//       setidd("");
+//       setfirst("");
+//       setother("");
+//       setLast("");
+//       setsexx("");
+//       setactions(false);
+//       toast.error("Record Not Found")
+//     }
+//     else if (patientinfo?.loaded2 === true && select === false) {
+//       setidd(patientinfo?.searchpbyname.data.patient_id);
+//       setfirst(patientinfo.searchpbyname.data.first_name);
+//       setother(patientinfo.searchpbyname.data.other_name);
+//       setLast(patientinfo.searchpbyname.data.last_name);
+//       setsexx(patientinfo.searchpbyname.data.sex);
+//       setactions(true);
+//       toast.error("name trig")
+//     }
+//     console.log(select)
+//   }, [patientinfo?.loaded, patientinfo?.loaded2]);
+
+ 
+//   const dispatch = useDispatch();
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     select ? dispatch(searchpbyidAction(id)) : dispatch(searchpbyNameAction(id));
+    
+//   };
+//   const handleradio = (val) => {
+
+//    setselect(val)
+//   };
+
+//   return (
+//     <>
+//       <Navbar />
+//       <div className="px-[150px] my-auto ">
+//         <div className=" bg-white shadow-lg rounded-lg mx-auto p-3  flex-col flex mt-4 justify-center items-center ">
+//           <Heading title="Patient Records" />
+
+//           <div className="flex flex-wraps w-full ">
+//             <div className="flex   w-5/12  flex-col  ">
+//               <SubHeading title="Search Patient" />
+//               <div className="items-center gap-3 flex px-20 mt-10 justify-center flex-col ">
+//                 <form  onSubmit={(e) => handleSubmit(e)}>
+//                   <input
+//                     className="p-1 w-full bg-slate-50 my-auto shadow-sm border border-black-200 " required
+//                     placeholder="Enter Patient ID " 
+//                     onChange={(e) => setid(e.target.value)}
+//                   ></input>{" "}
+//                     <input className="mr-1 mt-2" type="radio" value="true" name="search" checked={select === true} onChange={()=> { handleradio(true)}} />By ID  
+//                    <input className="mr-1 mt-2 ml-4" type="radio" value="false" checked={select === false}  name="search" onChange={()=> { handleradio(false)}} />By Names  
+                
+//                   <ButtonFull title="SEARCH" />
+//                 </form>
+//               </div>
+//             </div>
+//             <div className=" flex bg-slate-10 border border-red-50  w-7/12 px-20 ">
+//               <div className="relative flex flex-col min-w-0 break-words w-full mb-6  rounded-lg bg-blueGray-100 ">
+//                 <SubHeading title="Patient Information" />
+//                 <form>
+//                   <div className="flex   w-full flex-wrap py-1">
+//                     <label className=" items-center w-3/12 flex  uppercase text-blueGray-600 text-md font-bold mb-1">
+//                       Patient ID
+//                     </label>
+
+//                     <input
+//                       type="text"
+//                       className="border-2 px-3 flex py-1 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-md shadow focus:outline-none focus:ring w-9/12 ease-linear transition-all duration-150"
+//                       value={idd}
+//                       readOnly
+//                     />
+//                   </div>
+//                   <div className="flex  w-full flex-wrap py-1">
+//                     <label className=" items-center w-3/12 flex  uppercase text-blueGray-600 text-md font-bold mb-1">
+//                       Name
+//                     </label>
+
+//                     <input
+//                       type="text"
+//                       className="border-2 px-3 flex py-1 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-md shadow focus:outline-none focus:ring w-9/12 ease-linear transition-all duration-150"
+//                       value={first + " " + other + " " + Last}
+//                       readOnly
+//                     />
+//                   </div>
+
+//                   {/* <LabelInput inputval ="jjj" placeholder ="ddddd" label="fsfdf" /> */}
+
+//                   <div className="flex  w-full flex-wrap py-1">
+//                     <label className=" items-center w-3/12 flex  uppercase text-blueGray-600 text-md font-bold mb-1">
+//                       Sex
+//                     </label>
+
+//                     <input
+//                       type="text"
+//                       className="border-2 px-3 flex py-1 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-md shadow focus:outline-none focus:ring w-9/12 ease-linear transition-all duration-150"
+//                       value={sexx}
+//                       readOnly
+//                     />
+//                   </div>
+
+//                   <div className="w-full my-5 flex flex-col">
+//                     <h1 className="text-left flex uppercase bold text-xl  ">
+//                       Actions
+//                     </h1>{" "}
+//                     <div className={actions ? "w-full flex-wrap flex ": "hidden"}>
+//                       <button
+//                         className=" bg-blue-500 mr-1 text-white p-2 w-3/12 font-bold uppercase text-md  rounded  hover:shadow-md "
+//                         type="button"
+//                       >
+//                         Record Vitals
+//                       </button>
+//                       <button
+//                         className=" bg-blue-500 mr-1 text-white p-2 w-3/12 font-bold uppercase text-md  rounded  hover:shadow-md "
+//                         type="button"
+//                       >
+//                         consultation
+//                       </button>
+//                     </div>
+//                   </div>
+//                 </form>
+//               </div>
+//             </div>{" "}
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
+
+// export default Store;
