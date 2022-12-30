@@ -9,13 +9,7 @@ import {
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import KoinoDynamicTable from "./table";
-import {
-  KeyboardArrowLeft,
-  KeyboardArrowRight,
-  KeyboardDoubleArrowLeft,
-  KeyboardDoubleArrowRight,
-  Search,
-} from "@mui/icons-material";
+
 
 
 export const Store = () => {
@@ -81,79 +75,8 @@ useEffect(() => {
   return (
     <>
       <Navbar1 />
-      <KoinoDynamicTable
-          tableData={[{name:"kwame",Age:"26",dob:"nhnhjnn"},{name:"kwa",Age:"88",dob:"nhnhjnn"},{name:"zz",Age:"26",dob:"nhnhjnn"},{name:"kwame",Age:"26",dob:"nhnhjnn"}]}
-          // customColComponents={[
-          //   {
-          //     columnName: "bill",
-          //     component: (cellData) => {
-          //       return (
-          //         <div className="flex justify-start items-center">
-          //           <div className="flex justify-center mr-[20px] items-center w-[50px] h-[50px] bg-blue-50 rounded-md">
-          //             {/* <ArticleOutlined className="text-gray-500" /> */}
-          //           </div>
-          //           <div className="flex justify-center items-center flex-col">
-          //             <div className="text-xs">{cellData.name}</div>
-          //             <div className="text-xs text-dgray2">
-          //               {cellData.jobTitle}
-          //             </div>
-          //           </div>
-          //         </div>
-          //       );
-          //     },
-          //   },
-          //   {
-          //     columnName: "date",
-          //     component: (cellData) => {
-          //       return <div className="text-xs">{cellData}</div>;
-          //     },
-          //   },
-          //   {
-          //     columnName: "total",
-          //     component: (cellData) => {
-          //       return <div className="text-xs">GHS {cellData}</div>;
-          //     },
-          //   },
-          //   {
-          //     columnName: "arrears",
-          //     component: (cellData) => {
-          //       return <div className="text-xs">GHS {cellData}</div>;
-          //     },
-          //   },
-          //   {
-          //     columnName: "status",
-          //     component: (cellData) => {
-          //       return (
-          //         <div className="text-xs flex ">
-          //           {" "}
-          //           {cellData === "Unpaid" ? (
-          //             <div className="flex w-[60px] h-[30px] rounded-md  justify-center items-center  bg-red-50 text-red-500">
-          //               {cellData}
-          //             </div>
-          //           ) : (
-          //             <div className="flex w-[80px] h-[30px] rounded-md  justify-center items-center  bg-blue-50 text-blue-500">
-          //               {cellData}
-          //             </div>
-          //           )}
-          //         </div>
-          //       );
-          //     },
-          //   },
-          // ]}
-          rowStyles={{
-            styles: { color: "" },
-            classNames: "hover:bg-gray-50 mb-[20px] h-[70px]",
-          }}
-          headerStyles={[
-            {
-              column: "*",
-              styles: { color: "" },
-              classNames: "text-xs bg-gray-200 text-justify",
-            },
-          ]}
-          hideActionBar={false}
-          hidePagination={false}
-        />
+      
+     
       <div className="mx-[50px]    p-30 ">
         <div className="flex flex-row">
           <div className=" flex-col w-[400px] mt-20 py-4 mx-auto    gap-3 rounded-md shadow-lg  border-b-2 border-t-2 border-t-sky-300 border-b-sky-300">
