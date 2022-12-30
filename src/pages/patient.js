@@ -8,7 +8,7 @@ import ButtonFull from "../features/button-full";
 import "react-toastify/dist/ReactToastify.css";
 import SubHeading from "../features/subHeading";
 
-import toast, { Toaster } from "react-hot-toast";
+// import toast, { Toaster } from "react-hot-toast";
 import { addNewPatient, setPatientInfo } from "../redux/slices/patientSlice";
 import {  useNavigate } from "react-router-dom";
 

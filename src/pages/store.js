@@ -16,7 +16,7 @@ import {
   increaseQty,
   removeFromCart,
 } from "../redux/slices/storeSlice";
-import toast, { Toaster } from "react-hot-toast";
+// import toast, { Toaster } from "react-hot-toast";
 
 function Store() {
 
